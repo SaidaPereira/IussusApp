@@ -1,0 +1,7 @@
+{
+  "name": "IussusApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

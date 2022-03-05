@@ -74,6 +74,24 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+
+  /** IussusApp **/
+  --ion-color-iussusapp: #a7a7e3;
+	--ion-color-iussusapp-rgb: 167,167,227;
+	--ion-color-iussusapp-contrast: #000000;
+	--ion-color-iussusapp-contrast-rgb: 0,0,0;
+	--ion-color-iussusapp-shade: #9393c8;
+	--ion-color-iussusapp-tint: #b0b0e6;
+
+
+
+    --ion-color-iussusappclaro: #A6E6E6;
+    --ion-color-iussusappclaro-rgb: 166,230,230;
+    --ion-color-iussusappclaro-contrast: #000000;
+    --ion-color-iussusappclaro-contrast-rgb: 0,0,0;
+    --ion-color-iussusappclaro-shade: #92caca;
+    --ion-color-iussusappclaro-tint: #afe9e9;
 }
 
 @media (prefers-color-scheme: dark) {

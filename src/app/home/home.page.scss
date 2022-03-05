@@ -25,3 +25,11 @@
 #container a {
   text-decoration: none;
 }
+
+ion-button > ion-icon[name="settings"] {
+  font-size: 25px;
+}
+
+ion-button > ion-icon[name="person-circle"] {
+  font-size: 27px;
+}

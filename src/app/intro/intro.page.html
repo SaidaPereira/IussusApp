@@ -1,0 +1,13 @@
+<ion-content >
+  <META HTTP-EQUIV="REFRESH" CONTENT="2;../../home">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let slide of slides">
+      <h1>{{slide.title}}</h1>
+      <img src={{slide.imageSrc}} alt={{slide.imageAlt}}>
+      <p>{{slide.descripcion}}</p>
+    </ion-slide>
+    
+    
+
+  </ion-slides>
+</ion-content>

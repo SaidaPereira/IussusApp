@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroPage implements OnInit {
 
-  
+
 
   constructor() { }
 
-  
+
 
   ngOnInit() {
   }

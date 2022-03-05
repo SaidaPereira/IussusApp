@@ -1,8 +1,8 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
+  <ion-split-pane class="menu" contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
-        <ion-list id="inbox-list">
+        <ion-list id="menu-list">
           <img src="assets/img/Iussus.png" alt="IussusApp">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
@@ -16,7 +16,9 @@
         </ion-list>
 
       </ion-content>
-
+      <ion-footer>
+        <ion-item  [routerLink]="['/acerca']" ><ion-icon slot="start" name="book" ></ion-icon>  Acerca de la app</ion-item>
+      </ion-footer>
 
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

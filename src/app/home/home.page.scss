@@ -36,4 +36,25 @@ ion-button > ion-icon[name="person-circle"] {
 
 }
 
+ion-fab-button{
+  --background:#7cb4b4;
+    color: black;
+}
 
+ion-fab-button > ion-icon[name="add"] {
+    color: black;
+    font-size: 35px;
+}
+
+ion-fab-list >ion-fab-button > ion-icon[name="people"] {
+  color: black;
+  font-size: 25px;
+}
+ion-fab-list >ion-fab-button > ion-icon[name="clipboard"] {
+  color: black;
+  font-size: 25px;
+}
+ion-fab-list >ion-fab-button > ion-icon[name="cart"] {
+  color: black;
+  font-size: 25px;
+}

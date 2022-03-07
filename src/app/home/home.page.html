@@ -30,6 +30,26 @@
     <strong>Esta es la pagina principal</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
-  <ion-button [routerLink]="['/pedidos']" ><ion-icon slot="end" name="add-circle" ></ion-icon> </ion-button >
   
+  
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button ><ion-icon name="add"></ion-icon>
+ 
+      </ion-fab-button>
+
+      <ion-fab-list side="top" class="opciones">
+        
+        <ion-fab-button [routerLink]="['/pedidos']" ><ion-icon name="clipboard" title="Rgidtro"> </ion-icon> </ion-fab-button>
+        
+        <ion-fab-button><ion-icon name="cart"></ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="people"></ion-icon></ion-fab-button>
+
+      </ion-fab-list>
+     
+    </ion-fab>
+
+    
+    
+    
 </ion-content>

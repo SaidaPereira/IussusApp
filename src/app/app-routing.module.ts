@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'agenda',
     loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
+  },  {
+    path: 'registropedido',
+    loadChildren: () => import('./registropedido/registropedido.module').then( m => m.RegistropedidoPageModule)
   },
+
 ];
 
 @NgModule({

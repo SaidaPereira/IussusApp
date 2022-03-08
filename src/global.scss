@@ -30,3 +30,40 @@ ion-toolbar{
     color: black;
   
   }
+
+  .texttitle{
+    font-size: large;
+    font-style: normal;
+    color: black;
+  }
+  .texttitle2{
+    font-size: large;
+    font-style: inherit;
+    color: black;
+    margin-left:5px ;
+    padding: 0px 0px 6px 0px;
+  }
+  .texttitle3{
+    font-size: medium;
+    font-style: inherit;
+    color: green;
+  }
+
+  .texttitle4{
+    font-size: medium;
+    font-style: inherit;
+    color: rgb(128, 109, 0);
+  }
+
+  ion-footer > ion-toolbar{
+    --min-height:30px;
+  }
+
+  .btnopciones{
+    --background: white;
+    --background-activated:  white;
+    --padding-start:33px;
+  }
+
+
+ 

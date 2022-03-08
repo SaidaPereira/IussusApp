@@ -1,55 +1,124 @@
 <ion-header [translucent]="true">
-  <ion-toolbar >
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-        
-      
     </ion-buttons>
-
 
     <ion-buttons slot="end">
-      <ion-button  [routerLink]="['/login']" ><ion-icon name="person-circle" ></ion-icon></ion-button>        
-
-      <ion-button [routerLink]="['/configuracion']" ><ion-icon name="settings" ></ion-icon></ion-button>        
-
+      <ion-button [routerLink]="['/login']"
+        ><ion-icon name="person-circle"></ion-icon
+      ></ion-button>
+      <ion-button [routerLink]="['/configuracion']"
+        ><ion-icon name="settings"></ion-icon
+      ></ion-button>
     </ion-buttons>
 
-    
     <ion-title><strong>IussusApp</strong></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!--contenido-->
 
-  <div id="container">
-    <strong>Esta es la pagina principal</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-  
-  
+<ion-content mode="ios">
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button ><ion-icon name="add"></ion-icon>
- 
+  <!--Dato 1-->
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+          <ion-label class="texttitle"
+            ><strong>Pedido Nº 1 - 21/02/2022 </strong>
+          </ion-label>
+        </ion-col>
+
+        <ion-col>
+          <ion-icon
+            color="success"
+            size="large"
+            class="btnopciones"
+            name="ellipsis-horizontal-circle-outline"
+          ></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-label class="texttitle2">Luis Montiel - Km 22 Monday </ion-label>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="8">
+          <ion-label class="texttitle"
+            ><strong>Monto: 50.000gs </strong>
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label class="texttitle3">Presupuestado </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+    <!--Dato 2-->
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <ion-label class="texttitle"
+            ><strong>Pedido Nº 2 - 05/03/2022 </strong>
+          </ion-label>
+        </ion-col>
+
+        <ion-col>
+          
+          <ion-button size="small" class="btnopciones" ><ion-icon
+            color="success"
+            size="large"
+            name="ellipsis-horizontal-circle-outline"
+          >
+
+          </ion-icon></ion-button>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-label class="texttitle2">Monica Rivas - Km 30 </ion-label>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="8">
+          <ion-label class="texttitle"
+            ><strong>Monto: 80.000gs </strong>
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label class="texttitle4">Terminado </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+   <!--Registros -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button><ion-icon name="add"></ion-icon> </ion-fab-button>
+
+    <ion-fab-list side="top" class="opciones">
+      <ion-fab-button [routerLink]="['/registropedido']"
+        ><ion-icon name="clipboard"> </ion-icon>
       </ion-fab-button>
 
-      <ion-fab-list side="top" class="opciones">
-        
-        <ion-fab-button [routerLink]="['/registropedido']" ><ion-icon name="clipboard" > </ion-icon> </ion-fab-button>
-        
-        <ion-fab-button><ion-icon name="cart"></ion-icon></ion-fab-button>
-        <ion-fab-button><ion-icon name="people"></ion-icon></ion-fab-button>
-
-      </ion-fab-list>
-     
-    </ion-fab>
-
-    
-    
-    
+      <ion-fab-button><ion-icon name="cart"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon name="people"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-title class="ion-text-center"
+      ><strong>Total: 130.000gs</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

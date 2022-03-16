@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><strong>Registro de usuario</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+
+     <ion-label class="texttitle" ><strong>Ingrese sus datos personales</strong> </ion-label> 
+
+ 
+     <ion-item >
+      <ion-label position="floating" >Nombre</ion-label>
+      <ion-input type="text" ></ion-input>
+
+    </ion-item>
+
+    <ion-item >
+      <ion-label position="floating" >Apellido</ion-label>
+      <ion-input type="text" ></ion-input>
+
+    </ion-item>
+
+    <ion-item >
+      <ion-label position="floating" >Correo Electronico</ion-label>
+      <ion-input type="email" required="correo" pattern="^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$)"></ion-input>
+
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    
+      <ion-button type="submit" class="btnregistro" expand="block">Registrarse</ion-button>
+     
+      
+   
+
+    </ion-card-content>
+    

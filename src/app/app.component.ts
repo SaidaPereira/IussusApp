@@ -12,7 +12,7 @@ export class AppComponent {
     { title: 'Agenda', url: '/agenda', icon: 'calendar' },
     { title: 'Clientes', url: '/clientes', icon: 'people' },
     { title: 'Productos', url: '/productos', icon: 'cart' },
-    { title: 'Registro', url: '/registro', icon: 'person-add' }
+    { title: 'Registro', url: '/registrousuario', icon: 'person-add' }
  
   
 

@@ -15,14 +15,12 @@ const routes: Routes = [
     path: 'intro',
     loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   },
-  {
-    path: 'pedidos',
-    loadChildren: () => import('./pedidos/pedidos.module').then( m => m.PedidosPageModule)
-  },
+  
   {
     path: 'agenda',
     loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
-  },  {
+  },
+  {
     path: 'registropedido',
     loadChildren: () => import('./registropedido/registropedido.module').then( m => m.RegistropedidoPageModule)
   },
@@ -30,6 +28,14 @@ const routes: Routes = [
     path: 'clientes',
     loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'registrousuario',
+    loadChildren: () => import('./registrousuario/registrousuario.module').then( m => m.RegistrousuarioPageModule)
+  },
+
 
 ];
 

@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'recuperar',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
+  {
+    path: 'registroproducto',
+    loadChildren: () => import('./registroproducto/registroproducto.module').then( m => m.RegistroproductoPageModule)
+  },
 
 
 ];

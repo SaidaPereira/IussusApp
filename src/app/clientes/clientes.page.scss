@@ -1,3 +1,13 @@
 ion-searchbar{
     --background :#b1b1b1;
 }
+
+ion-fab-button{
+    --background:#7cb4b4;
+      color: black;
+  }
+  
+  ion-fab-button > ion-icon[name="add"] {
+      color: black;
+      font-size: 35px;
+  }

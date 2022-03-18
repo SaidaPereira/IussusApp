@@ -55,7 +55,19 @@ const routes: Routes = [
   {
     path: 'estado',
     loadChildren: () => import('./estado/estado.module').then( m => m.EstadoPageModule)
+  },  {
+    path: 'pedido',
+    loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
+  },
+  {
+    path: 'detallepedido',
+    loadChildren: () => import('./detallepedido/detallepedido.module').then( m => m.DetallepedidoPageModule)
+  },
+  {
+    path: 'cabecerapedido',
+    loadChildren: () => import('./cabecerapedido/cabecerapedido.module').then( m => m.CabecerapedidoPageModule)
   }
+
 
 
 

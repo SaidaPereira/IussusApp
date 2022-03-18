@@ -20,10 +20,7 @@ const routes: Routes = [
     path: 'agenda',
     loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
   },
-  {
-    path: 'registropedido',
-    loadChildren: () => import('./registropedido/registropedido.module').then( m => m.RegistropedidoPageModule)
-  },
+  
   {
     path: 'clientes',
     loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
@@ -55,7 +52,8 @@ const routes: Routes = [
   {
     path: 'estado',
     loadChildren: () => import('./estado/estado.module').then( m => m.EstadoPageModule)
-  },  {
+  },
+  {
     path: 'pedido',
     loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
   },

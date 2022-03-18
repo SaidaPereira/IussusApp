@@ -31,8 +31,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
+  },  {
     path: 'registrousuario',
     loadChildren: () => import('./registrousuario/registrousuario.module').then( m => m.RegistrousuarioPageModule)
   },
@@ -44,14 +43,6 @@ const routes: Routes = [
     path: 'recuperar',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
-  {
-    path: 'registroproducto',
-    loadChildren: () => import('./registroproducto/registroproducto.module').then( m => m.RegistroproductoPageModule)
-  },
-  {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
-  }
 
 
 ];

@@ -1,12 +1,27 @@
 .numero{
-    width: 45px;
-   background:rgb(204, 204, 204);
-   border-radius: 10px;
+    color: black;
+   width: 20%;
+  margin-right: 70%;
+ 
 }
 
 .fecha{
-    width: 200px;
-    background:rgb(204, 204, 204);
-   border-radius: 10px;
-   border-color:rgb(204, 204, 204) ;
+    width: 198px;
+    
+
+ ;
+}
+.cliente{
+    width: 270px;
+  height: 5%;
+}
+
+.btnopciones{
+    margin-top: 35px;
+}
+.btnproducto{
+    --background: #7cb4b4;
+    color: black;
+    margin-top: 7%;
+    margin-bottom: 5%;
 }

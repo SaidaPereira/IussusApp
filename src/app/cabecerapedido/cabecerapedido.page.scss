@@ -1,27 +1,23 @@
-.numero{
-    color: black;
-   width: 20%;
-  margin-right: 70%;
- 
+ion-content > ion-grid{
+   margin-left: 10px;
+   margin-right: 25px;
 }
 
-.fecha{
-    width: 198px;
-    
-
- ;
-}
-.cliente{
-    width: 270px;
-  height: 5%;
-}
-
-.btnopciones{
-    margin-top: 35px;
-}
-.btnproducto{
-    --background: #7cb4b4;
-    color: black;
+.general{
+    height: 30px;  
     margin-top: 7%;
-    margin-bottom: 5%;
+}
+
+
+
+
+
+.obse{
+    height: 100px;  
+   
+}
+
+h6{
+    margin-top: 70%;
+    text-align: center;
 }

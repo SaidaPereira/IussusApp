@@ -12,17 +12,19 @@ private URL = "http://localhost:3000";
 
 constructor(private http: HttpClient) { }
 
-/* getClientes(){
-  return this.http.get(`${this.URL}/clientes`);
-}
 
-getClientesFilter(){
-  return this.http.get(`${this.URL}/clientes-filter`);
-} */
-
-getClientes(): Observable<any>{
+public list(): Observable<any>{
   return this.http.get(this.URL+'/clientes');
 }
 
+public Filter(texto:String){
+  return this.http.get(this.URL+`/clientes-filter?q=${texto}`);
   
+}
+
+
+public Create(data:any): Observable<any>{
+ 
+  return this.http.post(`${this.URL}/cliente/create`,data);
+}
 }

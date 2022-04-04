@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup] = "registroCliente" (ngSubmit)="logForm()" >
+  <form [formGroup]="registrocliente" (submit)="enviardata()" >
   <ion-card>
     <ion-card-content>
 
@@ -38,23 +38,23 @@
     
     <ion-item>
       <ion-label position="floating">RUC o ci:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" formControlName = 'ruci'></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Nº Celular: </ion-label>
-      <ion-input type="tel" placeholder="09XX -XXX-XXX"></ion-input>
+      <ion-input type="tel" placeholder="09XX -XXX-XXX" formControlName = 'telefono'></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Correo Electrónico: </ion-label>
-      <ion-input type="email" placeholder="ejemplo@gmail.com"></ion-input>
+      <ion-input type="email" placeholder="ejemplo@gmail.com" formControlName = 'correo'></ion-input>
     </ion-item>
 
 
     <ion-item>
-      <ion-label position="floating">Notas </ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-label position="floating">Notas:</ion-label>
+      <ion-textarea formControlName = 'notas'></ion-textarea>
     </ion-item>
     
       <ion-button class="btnguardar" [routerLink]="'/clientes'" > <ion-icon name="checkmark"></ion-icon> </ion-button>

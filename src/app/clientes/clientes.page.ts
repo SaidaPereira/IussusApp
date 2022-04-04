@@ -11,14 +11,14 @@ import { ClienteService } from 'src/services/cliente.service';
 })
 export class ClientesPage implements OnInit {
  
- 
+
   @ViewChild(IonList) ionList: IonList;
   client = [];
  
   constructor(private clienteService : ClienteService) { }
   
   ngOnInit(){
-    this.clienteService.getClientes().subscribe(data=>{
+    this.clienteService.list().subscribe(data=>{
       if(data.success){
         this.client = data.clientes;
 
@@ -26,8 +26,24 @@ export class ClientesPage implements OnInit {
         this.client = [];
       }
     });
+  
   }
 
+
+  buscar(event){
+    const valor = event.detail.value;
+
+
+    this.clienteService.Filter(valor).subscribe(data=>{
+     console.log(data);
+     if(data){
+      this.client = data['clientes'];
+
+    }else{
+      this.client = [];
+    }
+  });
+  }
 
   editar(respuesta: any){
     console.log("Editado",respuesta);

@@ -64,9 +64,14 @@ const routes: Routes = [
   {
     path: 'cabecerapedido',
     loadChildren: () => import('./cabecerapedido/cabecerapedido.module').then( m => m.CabecerapedidoPageModule)
-  },  {
+  },
+  {
     path: 'cargapedido',
     loadChildren: () => import('./cargapedido/cargapedido.module').then( m => m.CargapedidoPageModule)
+  },
+  {
+    path: 'estados',
+    loadChildren: () => import('./estados/estados.module').then( m => m.EstadosPageModule)
   }
 
 

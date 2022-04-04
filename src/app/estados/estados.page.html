@@ -5,33 +5,33 @@
         
       
     </ion-buttons>
-    <ion-title><strong>Clientes</strong></ion-title>
+    <ion-title><strong>Estados</strong></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   
-  <ion-searchbar placeholder="Busqueda de cliente"></ion-searchbar>
+  <ion-searchbar placeholder="Busqueda de estado"></ion-searchbar>
   
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button  [routerLink]="['/registrocliente']"><ion-icon name="add"></ion-icon> </ion-fab-button>
+    <ion-fab-button  [routerLink]="['/estado']"><ion-icon name="add"></ion-icon> </ion-fab-button>
 
   </ion-fab>
 
 
   <ion-list>
 
-    <ion-item-sliding *ngFor="let cliente of client">
+    <ion-item-sliding *ngFor="let estado of estad">
 
       <ion-item-options side="end">
-        <ion-item-option class="editar" (click)="editar(cliente)" [routerLink]="'/registrocliente/' + cliente.cli_codigo">
+        <ion-item-option class="editar" (click)="editar(estado)" [routerLink]="'/estado/' + estado.est_codigo">
         
           <ion-icon slot="icon-only" name="create-outline"></ion-icon>
          
         
         </ion-item-option>
-        <ion-item-option class="eliminar" (click)="eliminar(cliente)">
+        <ion-item-option class="eliminar" (click)="eliminar(estado)">
           <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>
@@ -39,7 +39,7 @@
 
     <ion-item  >
       <ion-label >
-       {{this.cliente.cli_codigo + ' - ' + this.cliente.cli_nombre + ' ' + this.cliente.cli_apellido}} 
+       {{this.estado.est_codigo + ' - ' + this.estado.est_descripcion }} 
       </ion-label>
     </ion-item>
   </ion-item-sliding>

@@ -10,6 +10,7 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup] = "registroCliente" (ngSubmit)="logForm()" >
   <ion-card>
     <ion-card-content>
 
@@ -18,20 +19,20 @@
  
      <ion-item >
       <ion-label position="floating" >Nombre:</ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-input type="text" formControlName = 'nombre' ></ion-input>
 
     </ion-item>
 
     
     <ion-item >
       <ion-label position="floating" >Apellido:</ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-input type="text" formControlName = 'apellido' ></ion-input>
 
     </ion-item>
 
     <ion-item >
       <ion-label position="floating" >Dirección:</ion-label>
-      <ion-input type="text" required="direccion" ></ion-input>
+      <ion-input type="text" required="direccion" formControlName = 'direccion'></ion-input>
 
     </ion-item>
     
@@ -63,4 +64,6 @@
    
 
     </ion-card-content>
-    
+  </ion-card>
+  </form>
+</ion-content>

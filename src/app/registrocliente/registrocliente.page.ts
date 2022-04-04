@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registrocliente',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registrocliente.page.scss'],
 })
 export class RegistroclientePage implements OnInit {
+  public registroCliente : FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder : FormBuilder
+  ) {
+    this.registroCliente = this.formBuilder.group({
+      nombre : ['', Validators.required],
+      apellido : ['', Validators.required],
+      direccion : ['', Validators.required],
+      
+    })
+   }
 
   ngOnInit() {
   }
 
+
+  logForm() {
+
+  }
 }

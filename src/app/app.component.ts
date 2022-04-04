@@ -11,7 +11,7 @@ export class AppComponent {
     { title: 'Inicio', url: '/home', icon: 'home' },
     { title: 'Agenda', url: '/agenda', icon: 'calendar' },
     { title: 'Clientes', url: '/clientes', icon: 'people' },
-    { title: 'Estado', url: '/estado', icon: 'pricetag' },
+    { title: 'Estados', url: '/estados', icon: 'pricetag' },
     { title: 'Productos', url: '/productos', icon: 'cart' },
     { title: 'Registro', url: '/registrousuario', icon: 'person-add' }
  

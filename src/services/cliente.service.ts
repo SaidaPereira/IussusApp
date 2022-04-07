@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { Cliente } from '../app/interfaces/cliente';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,12 @@ import { Observable } from 'rxjs';
 export class ClienteService {
 
 private URL = "http://localhost:3000";
+
+httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 
 constructor(private http: HttpClient) { }
@@ -22,9 +30,23 @@ public Filter(texto:String){
   
 }
 
+public getById(codigo: string): Observable<any> {
+  return this.http.get(this.URL + `/cliente/find/` + codigo);
+}
 
-public Create(data:any): Observable<any>{
+
+public create(cliente:any){
+  if(cliente.cli_codigo){
+    return this.http.put(this.URL+`/cliente/update`,cliente);
+  }else{
  
-  return this.http.post(`${this.URL}/cliente/create`,data);
+    return this.http.post(this.URL+`/cliente/create`,cliente);
+  }
+}
+
+
+public delete(codigo:String){
+  return this.http.delete(this.URL+`/cliente/remove/${codigo}`);
+  
 }
 }

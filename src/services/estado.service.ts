@@ -13,9 +13,28 @@ export class EstadoService {
 
 constructor(private http: HttpClient) { }
 
-listEstados(): Observable<any>{
-  return this.http.get(this.URL+'/estados');
+
+
+public listEstados(): Observable<any> {
+  return this.http.get(this.URL + '/estados');
 }
 
+public getById(codigo: string): Observable<any> {
+  return this.http.get(this.URL + `/estado/find` + codigo);
+}
+
+public Filter(texto: String) {
+  return this.http.get(this.URL + `/estados-filter?q=${texto}`);
+}
+
+public create(estado) {
+  return this.http.post(this.URL + `/estado/create`, estado);
+}
+
+
+
+public delete(codigo: String) {
+  return this.http.delete(this.URL + `/estado/remove/${codigo}`);
+}
 
 }

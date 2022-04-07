@@ -50,10 +50,6 @@ const routes: Routes = [
     loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
   },
   {
-    path: 'estado',
-    loadChildren: () => import('./estado/estado.module').then( m => m.EstadoPageModule)
-  },
-  {
     path: 'pedido',
     loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
   },
@@ -72,7 +68,11 @@ const routes: Routes = [
   {
     path: 'estados',
     loadChildren: () => import('./estados/estados.module').then( m => m.EstadosPageModule)
+  },  {
+    path: 'registroestado',
+    loadChildren: () => import('./registroestado/registroestado.module').then( m => m.RegistroestadoPageModule)
   }
+
 
 
 

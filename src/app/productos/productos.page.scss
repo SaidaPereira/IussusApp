@@ -1,33 +1,33 @@
-ion-searchbar{
-    --background :#b1b1b1;
+ion-searchbar {
+  --background: #b1b1b1;
 }
 
-ion-fab-button{
-    --background:#7cb4b4;
-      color: black;
-  }
-  
-  ion-fab-button > ion-icon[name="add"] {
-      color: black;
-      font-size: 35px;
-  }
+ion-fab-button {
+  --background: #7cb4b4;
+  color: black;
+}
 
-  .eliminar{
-    --background:#7cb4b4;
-    color: black;
-  }
+ion-fab-button > ion-icon[name="add"] {
+  color: black;
+  font-size: 35px;
+}
 
-  .editar{
-    --background:#b1b1b1;
-    color: black;
+.eliminar {
+  --background: #7cb4b4;
+  color: black;
+}
 
-  }
-  p{
-    text-align: center;
-    color: #4c6c6c;
-    margin-top: 1%;
-    margin-bottom: 0%;
-    
-    
-   
-  }
+.editar {
+  --background: #b1b1b1;
+  color: black;
+}
+p {
+  text-align: center;
+  color: #4c6c6c;
+  margin-top: 1%;
+  margin-bottom: 0%;
+}
+
+ion-button > ion-icon[name="home"] {
+  font-size: 27px;
+}

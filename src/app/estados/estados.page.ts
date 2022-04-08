@@ -10,42 +10,34 @@ import { Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./estados.page.scss'],
 })
 export class EstadosPage implements OnInit {
-
   @ViewChild(IonList) ionList: IonList;
   estad = [];
 
-  constructor(private estadoService : EstadoService,
+  constructor(
+    private estadoService: EstadoService,
     private toastCtrl: ToastController,
     public router: Router,
-    private fb : FormBuilder,
-    private activatedRoute: ActivatedRoute) { }
-  
-  
- 
+    private fb: FormBuilder,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this. listarEstado();
+    this.listarEstado();
   }
 
-  ionViewWillEnter(){
-    this. listarEstado();
+  ionViewWillEnter() {
+    this.listarEstado();
   }
-
-
 
   listarEstado() {
     this.estadoService.listEstados().subscribe((data) => {
-      if(data.success){
+      if (data.success) {
         this.estad = data.estados;
-
-      }else{
-        this.estad= [];
+      } else {
+        this.estad = [];
       }
     });
   }
-
-  
-
 
   buscar(event) {
     const valor = event.detail.value;
@@ -77,10 +69,9 @@ export class EstadosPage implements OnInit {
     });
   }
 
-editar(codigo) {
-  this.estadoService.getById(codigo).subscribe((data) => {
-    console.log(data);
-  })
-}
-
+  editar(codigo) {
+    this.estadoService.getById(codigo).subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

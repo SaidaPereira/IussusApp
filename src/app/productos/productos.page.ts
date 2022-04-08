@@ -9,39 +9,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./productos.page.scss'],
 })
 export class ProductosPage implements OnInit {
-
   @ViewChild(IonList) ionList: IonList;
   product = [];
- 
-  constructor(private productoService : ProductoService,
-    private toastCtrl: ToastController,
-    public router: Router) { }
-  
 
+  constructor(
+    private productoService: ProductoService,
+    private toastCtrl: ToastController,
+    public router: Router
+  ) {}
 
   ngOnInit() {
-    this. listarProductos();
+    this.listarProductos();
   }
 
-  ionViewWillEnter(){
-    this. listarProductos();
+  ionViewWillEnter() {
+    this.listarProductos();
   }
-
-
 
   listarProductos() {
     this.productoService.list().subscribe((data) => {
-      if(data.success){
-        this.product  = data.productos;
-
-      }else{
+      if (data.success) {
+        this.product = data.productos;
+      } else {
         this.product = [];
       }
     });
   }
-
-  
-
 
   buscar(event) {
     const valor = event.detail.value;
@@ -49,9 +42,9 @@ export class ProductosPage implements OnInit {
     this.productoService.Filter(valor).subscribe((data) => {
       console.log(data);
       if (data) {
-        this.product  = data['productos'];
+        this.product = data['productos'];
       } else {
-        this.product  = [];
+        this.product = [];
       }
     });
   }
@@ -76,9 +69,8 @@ export class ProductosPage implements OnInit {
   editar(codigo) {
     const valor = this.productoService.getById(codigo).subscribe((data) => {
       console.log(valor);
-    
     });
 
-    this.productoService.create(valor) ;
+   
   }
 }

@@ -34,7 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./registrousuario/registrousuario.module').then( m => m.RegistrousuarioPageModule)
   },
   {
-    path: 'registrocliente',
+    path: 'registrocliente/:id',
     loadChildren: () => import('./registrocliente/registrocliente.module').then( m => m.RegistroclientePageModule)
   },
   {
@@ -68,9 +68,14 @@ const routes: Routes = [
   {
     path: 'estados',
     loadChildren: () => import('./estados/estados.module').then( m => m.EstadosPageModule)
-  },  {
-    path: 'registroestado',
+  },
+  {
+    path: 'registroestado/:id',
     loadChildren: () => import('./registroestado/registroestado.module').then( m => m.RegistroestadoPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
 

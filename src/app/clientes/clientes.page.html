@@ -13,9 +13,11 @@
     debounce="500"
     (ionChange)="buscar($event)"
   ></ion-searchbar>
+  <p>Deslice hacia la izquierda para ver mas opciones</p>
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button [routerLink]="['/registrocliente']"
+    <ion-fab-button [routerLink]="['/registrocliente/0']"
       ><ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

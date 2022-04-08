@@ -20,7 +20,7 @@ public listEstados(): Observable<any> {
 }
 
 public getById(codigo: string): Observable<any> {
-  return this.http.get(this.URL + `/estado/find` + codigo);
+  return this.http.get(this.URL + `/estado/find/` + codigo);
 }
 
 public Filter(texto: String) {
@@ -30,7 +30,6 @@ public Filter(texto: String) {
 public create(estado) {
   return this.http.post(this.URL + `/estado/create`, estado);
 }
-
 
 
 public delete(codigo: String) {

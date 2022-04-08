@@ -5,7 +5,7 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/login']"
+      <ion-button [routerLink]="['/perfil']"
         ><ion-icon name="person-circle"></ion-icon
       ></ion-button>
       <ion-button [routerLink]="['/configuracion']"
@@ -112,10 +112,10 @@
         ><ion-icon name="clipboard"> </ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button [routerLink]="['/estado']"><ion-icon name="pricetag"></ion-icon></ion-fab-button>
+      <ion-fab-button [routerLink]="['/registroestado/0']"><ion-icon name="pricetag"></ion-icon></ion-fab-button>
 
       <ion-fab-button [routerLink]="['/registroproducto']"><ion-icon name="cart"></ion-icon></ion-fab-button>
-      <ion-fab-button [routerLink]="['/registrocliente']"><ion-icon name="people"></ion-icon></ion-fab-button>
+      <ion-fab-button [routerLink]="['/registrocliente/0']"><ion-icon name="people"></ion-icon></ion-fab-button>
       
     </ion-fab-list>
   </ion-fab>

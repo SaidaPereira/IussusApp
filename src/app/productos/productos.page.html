@@ -6,12 +6,7 @@
 
     </ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/home']">
-        <ion-icon name="home"></ion-icon>
-      </ion-button>
-
-    </ion-buttons>
+    
     <ion-title><strong>Productos</strong></ion-title>
   </ion-toolbar>
 </ion-header>
@@ -24,7 +19,7 @@
 
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button [routerLink]="['/registroproducto']">
+    <ion-fab-button [routerLink]="['/registroproducto/0']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -32,7 +27,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let producto of product">
       <ion-item-options side="end">
-        <ion-item-option class="editar" (click)="editar(producto)"
+        <ion-item-option class="editar"
           [routerLink]="'/registroproducto/' + producto.pro_codigo">
           <ion-icon slot="icon-only" name="create-outline"></ion-icon>
         </ion-item-option>

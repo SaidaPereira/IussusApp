@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonList, ToastController } from '@ionic/angular';
 import { EstadoService } from 'src/services/estado.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Validators, FormBuilder } from '@angular/forms';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-estados',
@@ -17,8 +16,8 @@ export class EstadosPage implements OnInit {
     private estadoService: EstadoService,
     private toastCtrl: ToastController,
     public router: Router,
-    private fb: FormBuilder,
-    private activatedRoute: ActivatedRoute
+ 
+   
   ) {}
 
   ngOnInit() {
@@ -69,9 +68,4 @@ export class EstadosPage implements OnInit {
     });
   }
 
-  editar(codigo) {
-    this.estadoService.getById(codigo).subscribe((data) => {
-      console.log(data);
-    });
-  }
 }

@@ -42,7 +42,7 @@ const routes: Routes = [
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
   {
-    path: 'registroproducto',
+    path: 'registroproducto/:id',
     loadChildren: () => import('./registroproducto/registroproducto.module').then( m => m.RegistroproductoPageModule)
   },
   {

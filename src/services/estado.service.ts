@@ -27,10 +27,15 @@ public Filter(texto: String) {
   return this.http.get(this.URL + `/estados-filter?q=${texto}`);
 }
 
-public create(estado) {
-  return this.http.post(this.URL + `/estado/create`, estado);
-}
 
+public create(estado:any){
+  if(estado.est_codigo){
+    return this.http.put(this.URL+`/estado/update`,estado);
+  }else{
+ 
+    return this.http.post(this.URL+`/estado/create`,estado);
+  }
+}
 
 public delete(codigo: String) {
   return this.http.delete(this.URL + `/estado/remove/${codigo}`);

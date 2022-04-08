@@ -4,11 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/home']"
-        ><ion-icon name="home"></ion-icon
-      ></ion-button>
-    </ion-buttons>
+
 
     <ion-title><strong>Clientes</strong></ion-title>
   </ion-toolbar>
@@ -31,9 +27,12 @@
   <ion-list>
     <ion-item-sliding *ngFor="let cliente of client">
       <ion-item-options side="end">
-        <ion-item-option class="editar" (click)="editar(cliente.cli_codigo)">
-          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
-        </ion-item-option>
+        <ion-item-option
+        class="editar"
+        [routerLink]="'/registrocliente/'+cliente.cli_codigo"
+      >
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-item-option>
         <ion-item-option
           class="eliminar"
           (click)="borrarcliente(cliente.cli_codigo)"

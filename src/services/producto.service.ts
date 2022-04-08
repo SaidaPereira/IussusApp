@@ -34,9 +34,12 @@ export class ProductoService {
   
   
   public create(producto:any){
-  
+    if(producto.pro_codigo){
+      return this.http.put(this.URL+`/producto/update`,producto);
+    }else{
+   
       return this.http.post(this.URL+`/producto/create`,producto);
-    
+    }
   }
   
   

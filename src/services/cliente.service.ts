@@ -36,9 +36,13 @@ public getById(codigo: string): Observable<any> {
 
 
 public create(cliente:any){
-
+  if(cliente.cli_codigo){
+    //Actualiza los datos
+    return this.http.put(this.URL+`/cliente/update`,cliente);
+  }else{
+  // Crea Registro nuevo
     return this.http.post(this.URL+`/cliente/create`,cliente);
-  
+  }
 }
 
 

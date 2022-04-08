@@ -23,10 +23,9 @@ export class ClientesPage implements OnInit {
     this.listar();
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.listar();
   }
-
 
   listar() {
     this.clienteService.list().subscribe((data) => {
@@ -71,9 +70,8 @@ export class ClientesPage implements OnInit {
   editar(codigo) {
     const valor = this.clienteService.getById(codigo).subscribe((data) => {
       console.log(valor);
-    
     });
 
-    this.clienteService.create(valor) ;
+    this.clienteService.create(valor);
   }
 }

@@ -31,11 +31,11 @@ export class RegistroestadoPage implements OnInit {
       est_codigo: this.registroestado.value.codigo ==='0' ? null : Number(this.registroestado.value.codigo), 
       est_descripcion : this.registroestado.value.descripcion
       }
-      console.log('DATA CLIENTEEEE', estado);
+      console.log('Estadoos', estado);
 
       this.estadoService.create(estado).subscribe(async (data : any ) => {
         const message = data['success']
-        ? 'Cliente Guardado con exito'
+        ? 'Estado Guardado con exito'
         : ' Error al guardar';
       const toast = await this.toastCtrl.create({
         message,

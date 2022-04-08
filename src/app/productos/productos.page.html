@@ -12,34 +12,47 @@
 <ion-content>
 
   
-  <ion-searchbar placeholder="Busqueda de producto"></ion-searchbar>
-  
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button  [routerLink]="['/registroproducto']"><ion-icon name="add"></ion-icon> </ion-fab-button>
+  <ion-searchbar
+  placeholder="Busqueda de producto"
+  debounce="500"
+  (ionChange)="buscar($event)"
+></ion-searchbar>
+<p>Deslice hacia la izquierda para ver mas opciones</p>
 
-  </ion-fab>
-
-
-  <ion-list>
-    <ion-item>
-      <ion-label> 001 - Cajas</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>002 - Remera perzonalizada</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>003 - Taza personalizada</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>004 -Termo perzonalizado</ion-label>
-    </ion-item>
-    
-  </ion-list> 
   
-  
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button [routerLink]="['/registroproducto']"
+    ><ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let producto of product">
+    <ion-item-options side="end">
+      <ion-item-option
+        class="editar"
+        (click)="editar(producto)"
+        [routerLink]="'/registroproducto/' + producto.pro_codigo"
+      >
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-item-option>
+      <ion-item-option
+        class="eliminar"
+        (click)="borrarProducto(producto.pro_codigo)"
+      >
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item>
+      <ion-label>
+        {{this.producto.pro_codigo + ' - ' + this.producto.pro_descripcion }}
+      </ion-label>
+    </ion-item>
+  </ion-item-sliding>
+</ion-list>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar class="footer">
-  </ion-toolbar>
+<ion-toolbar class="footer"> </ion-toolbar>
 </ion-footer>

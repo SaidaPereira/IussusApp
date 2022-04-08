@@ -13,9 +13,10 @@
     debounce="500"
     (ionChange)="buscar($event)"
   ></ion-searchbar>
+  <p>Deslice hacia la izquierda para ver mas opciones</p>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button [routerLink]="['/registroestado']"
+    <ion-fab-button [routerLink]="['/registroestado/0']"
       ><ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -25,8 +26,8 @@
       <ion-item-options side="end">
         <ion-item-option
           class="editar"
-          (click)="editar(estado)"
-          [routerLink]="'/estado/' + estado.est_codigo"
+          (click)="editar(estado.est_codigo)"
+          [routerLink]="'/registroestado/'+estado.est_codigo"
         >
           <ion-icon slot="icon-only" name="create-outline"></ion-icon>
         </ion-item-option>

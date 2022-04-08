@@ -36,12 +36,9 @@ public getById(codigo: string): Observable<any> {
 
 
 public create(cliente:any){
-  if(cliente.cli_codigo){
-    return this.http.put(this.URL+`/cliente/update`,cliente);
-  }else{
- 
+
     return this.http.post(this.URL+`/cliente/create`,cliente);
-  }
+  
 }
 
 

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/">
+
+      </ion-back-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button 
+        ><ion-icon name="create-outline"></ion-icon
+      ></ion-button>
+      
+    </ion-buttons>
+
+    <ion-title><strong>Mi Perfil</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+  <ion-avatar >
+    <img  src="assets\img\perfil1.jpeg">
+  </ion-avatar>
+  <form style="margin-top: 50px;">
+
+      <ion-item >
+        <ion-label class="text2" position="stacked"  color="dark">Nombre</ion-label>
+        <ion-input type="text" placeholder="Saida Mabel"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label  class="text2" position="stacked" color="dark">Apellido</ion-label>
+        <ion-input type="text" placeholder="Pereira Miranda"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label  class="text2" position="stacked" color="dark">Telefono</ion-label>
+        <ion-input type="text" placeholder="0985235632"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="text2" position="stacked" color="dark">Correo electronico</ion-label>
+        <ion-input type="email" placeholder="saidapereira22@gmail.com"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button  class="btncerrar" expand="block">Cerrar Sesión</ion-button>
+        </ion-col>
+      </ion-row>
+
+  </form>
+
+  
+</ion-card>   
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar class="footer"> </ion-toolbar>
+  </ion-footer>

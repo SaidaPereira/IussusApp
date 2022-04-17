@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,69 +13,69 @@ const routes: Routes = [
   },
   {
     path: 'intro',
-    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
+    loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule)
   },
   
   {
     path: 'agenda',
-    loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
+    loadChildren: () => import('./pages/agenda/agenda.module').then( m => m.AgendaPageModule)
   },
   
   {
     path: 'clientes',
-    loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
+    loadChildren: () => import('./pages/clientes/clientes.module').then( m => m.ClientesPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'registrousuario',
-    loadChildren: () => import('./registrousuario/registrousuario.module').then( m => m.RegistrousuarioPageModule)
+    loadChildren: () => import('./pages/registrousuario/registrousuario.module').then( m => m.RegistrousuarioPageModule)
   },
   {
     path: 'registrocliente/:id',
-    loadChildren: () => import('./registrocliente/registrocliente.module').then( m => m.RegistroclientePageModule)
+    loadChildren: () => import('./pages/registrocliente/registrocliente.module').then( m => m.RegistroclientePageModule)
   },
   {
     path: 'recuperar',
-    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+    loadChildren: () => import('./pages/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
   {
     path: 'registroproducto/:id',
-    loadChildren: () => import('./registroproducto/registroproducto.module').then( m => m.RegistroproductoPageModule)
+    loadChildren: () => import('./pages/registroproducto/registroproducto.module').then( m => m.RegistroproductoPageModule)
   },
   {
     path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+    loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule)
   },
   {
     path: 'pedido',
-    loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
+    loadChildren: () => import('./pages/pedido/pedido.module').then( m => m.PedidoPageModule)
   },
   {
     path: 'detallepedido',
-    loadChildren: () => import('./detallepedido/detallepedido.module').then( m => m.DetallepedidoPageModule)
+    loadChildren: () => import('./pages/detallepedido/detallepedido.module').then( m => m.DetallepedidoPageModule)
   },
   {
     path: 'cabecerapedido',
-    loadChildren: () => import('./cabecerapedido/cabecerapedido.module').then( m => m.CabecerapedidoPageModule)
+    loadChildren: () => import('./pages/cabecerapedido/cabecerapedido.module').then( m => m.CabecerapedidoPageModule)
   },
   {
     path: 'cargapedido',
-    loadChildren: () => import('./cargapedido/cargapedido.module').then( m => m.CargapedidoPageModule)
+    loadChildren: () => import('./pages/cargapedido/cargapedido.module').then( m => m.CargapedidoPageModule)
   },
   {
     path: 'estados',
-    loadChildren: () => import('./estados/estados.module').then( m => m.EstadosPageModule)
+    loadChildren: () => import('./pages/estados/estados.module').then( m => m.EstadosPageModule)
   },
   {
     path: 'registroestado/:id',
-    loadChildren: () => import('./registroestado/registroestado.module').then( m => m.RegistroestadoPageModule)
+    loadChildren: () => import('./pages/registroestado/registroestado.module').then( m => m.RegistroestadoPageModule)
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
 

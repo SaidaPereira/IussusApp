@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonList, ToastController } from '@ionic/angular';
-import { ProductoService } from '../../services/producto.service';
+import { ProductoService } from '../../../services/producto.service';
 import { Router } from '@angular/router';
 
 @Component({

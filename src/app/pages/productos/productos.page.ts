@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonList, ToastController } from '@ionic/angular';
+import { IonList, ToastController, AlertController } from '@ionic/angular';
 import { ProductoService } from '../../../services/producto.service';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,8 @@ export class ProductosPage implements OnInit {
   constructor(
     private productoService: ProductoService,
     private toastCtrl: ToastController,
-    public router: Router
+    public router: Router,
+    public alertController: AlertController
   ) {}
 
   ngOnInit() {
@@ -49,7 +50,21 @@ export class ProductosPage implements OnInit {
     });
   }
 
-  borrarProducto(codigo) {
+  async borrarProducto(codigo) {
+    const alert = await this.alertController.create({
+      header: 'Eliminar Producto',
+      message: '¿Está seguro de querer eliminar el producto?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          id: 'cancel-button',
+        }, {
+          text: 'Eliminar',
+          id: 'confirm-button',
+          handler: () => {
+
+
     this.productoService.delete(codigo).subscribe(async (data) => {
       const message = data['success']
         ? 'Producto #' + codigo + ' borrado con exito'
@@ -64,6 +79,13 @@ export class ProductosPage implements OnInit {
 
       this.ionList.closeSlidingItems();
     });
+  }
+        }
+  ]
+});
+
+await alert.present();
+    
   }
 
   editar(codigo) {

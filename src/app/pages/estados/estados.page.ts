@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonList, ToastController } from '@ionic/angular';
+import { IonList, ToastController, AlertController } from '@ionic/angular';
 import { EstadoService } from 'src/services/estado.service';
 import { Router} from '@angular/router';
 
@@ -16,6 +16,7 @@ export class EstadosPage implements OnInit {
     private estadoService: EstadoService,
     private toastCtrl: ToastController,
     public router: Router,
+    public alertController: AlertController
  
    
   ) {}
@@ -51,7 +52,20 @@ export class EstadosPage implements OnInit {
     });
   }
 
-  borrarEstado(codigo) {
+  async borrarEstado(codigo) {
+    const alert = await this.alertController.create({
+      header: 'Eliminar Estado',
+      message: '¿Está seguro de querer eliminar el estado?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          id: 'cancel-button',
+        }, {
+          text: 'Eliminar',
+          id: 'confirm-button',
+          handler: () => {
+
     this.estadoService.delete(codigo).subscribe(async (data) => {
       const message = data['success']
         ? 'Estado #' + codigo + ' borrado con exito'
@@ -66,6 +80,13 @@ export class EstadosPage implements OnInit {
 
       this.ionList.closeSlidingItems();
     });
+  }
+        }
+  ]
+});
+
+await alert.present();
+    
   }
 
 }

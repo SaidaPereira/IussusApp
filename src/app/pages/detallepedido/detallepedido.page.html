@@ -1,9 +1,33 @@
-<ion-content>
-  <ion-button [routerLink]="['/cargapedido']"   class="btnproducto" expand="block"
-    >Agregar producto</ion-button
-  >
 
-  <ion-grid class="ion-margin">
+
+<ion-content>
+  <form [formGroup]=" registroitem" (ngSubmit)="guardardetalle()">
+ <ion-card-content>
+  <ion-item>
+    <ion-icon slot="start" name="search"></ion-icon>
+    <ion-label class="general"><strong>Producto: </strong></ion-label>
+      <ion-select mode="md" formControlName="producto"  (ionChange)="onChange($event)" >
+        <ion-select-option *ngFor="let producto of productos" [value]="producto">{{producto.pro_codigo}}-{{producto.pro_descripcion}}</ion-select-option>
+      </ion-select>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-icon slot="start" name="cash"></ion-icon>
+    <ion-label class="general"><strong>Precio: </strong></ion-label>
+    <ion-input type="number" formControlName="precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon slot="start" name="cart"></ion-icon>
+    <ion-label class="general"><strong>Cantidad: </strong></ion-label>
+    <ion-input type="number" formControlName="cantidad"></ion-input>
+  </ion-item>
+  
+  <ion-button type="submit"  class="btnproducto" expand="block">Agregar</ion-button>
+
+      
+  <ion-grid>
     <ion-row>
       <ion-col size="4">
         <ion-label><strong>Producto</strong></ion-label>
@@ -11,56 +35,56 @@
       <ion-col size="2">
         <ion-label><strong>Cant</strong></ion-label>
       </ion-col>
-      <ion-col size="3">
+      <ion-col size="2">
         <ion-label><strong>Precio</strong></ion-label>
       </ion-col>
       <ion-col size="3">
         <ion-label><strong>Subtotal</strong></ion-label>
       </ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-col size="4">
-        <ion-label>001- Cajas</ion-label>
-      </ion-col>
-
-      <ion-col size="2">
-        <ion-label>3</ion-label>
-      </ion-col>
-
-      <ion-col size="3">
-        <ion-label>25.000</ion-label>
-      </ion-col>
-
-      <ion-col size="3">
-        <ion-label>75.000</ion-label>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="4">
-        <ion-label>002- Remera</ion-label>
-      </ion-col>
-
-      <ion-col size="2">
-        <ion-label>5</ion-label>
-      </ion-col>
-
-      <ion-col size="3">
-        <ion-label>30.000</ion-label>
-      </ion-col>
-
-      <ion-col size="3">
-        <ion-label>150.000</ion-label>
-      </ion-col>
-    </ion-row>
   </ion-grid>
 
-  <ion-label class="total"><strong>Total:</strong> 225.000gs</ion-label>
+  <ion-grid *ngFor="let item of detalles">
+    <ion-row>
+      <ion-col size="4">
+        <ion-label>{{item.pro_descripcion}}</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-label>{{item.cant}}</ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <ion-label>{{item.precio}}</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <ion-label><strong>{{item.pedi_total}}</strong></ion-label>
+      </ion-col>
+
+      <ion-col size="1">
+        <ion-icon (click)="eliminarDetalle(item.index,item.pedi_total)" name="trash"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+
+  <ion-label class="total"><strong>Total:</strong> {{total}}</ion-label>
+</ion-card-content>
+  </form>
+ 
 </ion-content>
 
+
+<ion-icon type="button" 
+ 
+  (click)="volverCabecera()"  name="chevron-back"></ion-icon>
+
 <ion-footer
-  ><ion-button type="submit" class="btnguardar" expand="block"
-    >Guardar</ion-button
-  ></ion-footer
+  >
+  <ion-button type="submit" class="btnguardar" expand="block"
+ 
+  (click)="guardarPedido()" >Guardar</ion-button
+  >
+
+ </ion-footer
 >

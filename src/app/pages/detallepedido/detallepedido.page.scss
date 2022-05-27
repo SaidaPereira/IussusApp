@@ -12,7 +12,7 @@
     color: black;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 15px;
+    margin-top: 20px;
     
 }
 
@@ -22,5 +22,11 @@
     
 }
 ion-footer{
-    height: 15%;
+    height: 13%;
 }
+
+ion-icon[name="chevron-back"] {
+    font-size: 25px;
+    margin-left: 5%;
+  
+  }

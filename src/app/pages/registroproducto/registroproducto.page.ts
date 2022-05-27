@@ -15,8 +15,8 @@ export class RegistroproductoPage implements OnInit {
   registroproducto = this.fb.group({
     descripcion: ['', Validators.required],
     costo: [''],
-    precio: [' '],
-    unimed: [' '],
+    precio: [''],
+    unimed: [''],
     obse: [''],
   });
 

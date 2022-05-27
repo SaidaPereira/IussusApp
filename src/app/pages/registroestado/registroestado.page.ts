@@ -28,6 +28,8 @@ export class RegistroestadoPage implements OnInit {
     this.listarEstado();
   }
 
+
+  
   guardarEstado() {
     const estado = this.registroestado.value;
     const estados = {

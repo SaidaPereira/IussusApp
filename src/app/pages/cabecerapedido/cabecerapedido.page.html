@@ -1,67 +1,50 @@
+<ion-content mode="ios">
+  <form [formGroup]=" registropedido" (ngSubmit)="guardarPedido()">
+
+    <ion-item>
+      <ion-icon slot="start" name="calendar"></ion-icon>
+      <ion-label class="general"><strong>Fecha: </strong></ion-label>
+      <ion-input formControlName="fecha" type="date"></ion-input>
+    </ion-item>
 
 
-  <ion-content mode="ios" >
-    
-      <ion-grid >
-        
-        <ion-row>
-          <ion-item>
-            <ion-icon slot="start" name="calendar"></ion-icon>
-            <ion-label class="general"><strong>Fecha: </strong></ion-label>
-            <ion-input type="text"  placeholder="dd/mm/aaaa"></ion-input>
-          </ion-item>
-        </ion-row>
+    <ion-item>
+      <ion-icon slot="start" name="people"></ion-icon>
+      <ion-label class="general"><strong>Cliente: </strong></ion-label>
+      <ion-select mode="md" formControlName="cliente">
+        <ion-select-option *ngFor="let cliente of clientes" [value]="cliente.cli_codigo">{{cliente.cli_nombre}}
+          {{cliente.cli_apellido}}</ion-select-option>
+      </ion-select>
 
-        <ion-row>
-          
-            <ion-item>
-              <ion-icon slot="start" name="people"></ion-icon>
-              <ion-label class="general" ><strong>Cliente: </strong></ion-label>
-              <ion-input type="text"></ion-input>
-              <ion-button size="small" class="btnopciones"
-              ><ion-icon
-                color="success"
-                size="large"
-                name="ellipsis-horizontal-circle-outline"
-              >
-              </ion-icon
-            ></ion-button>
-            </ion-item>
-         
-
-         
-
-        </ion-row>
-        <ion-item>
-          <ion-icon slot="start" name="pricetag"></ion-icon>
-          <ion-label  class="general"><strong>Estado</strong></ion-label>
-          <ion-select mode="md">
-            <ion-select-option value="p">Presupuestado</ion-select-option>
-            <ion-select-option value="t">Terminado</ion-select-option>
-            <ion-select-option value="e">Entregado</ion-select-option>
-          </ion-select>
-        </ion-item>
+    </ion-item>
 
 
-        
-        <ion-item>
-          <ion-icon slot="start" name="reader"></ion-icon>
-          <ion-label  class="obse"><strong>Observación:</strong> </ion-label>
-          <ion-textarea ></ion-textarea>
-        </ion-item>
 
-        
-        <ion-text >
-          <h6>Cargue los productos en la pestaña de detalle</h6>
-        </ion-text>
-        
 
-      </ion-grid>
+    <ion-item>
+      <ion-icon slot="start" name="pricetag"></ion-icon>
+      <ion-label class="general"><strong>Estado</strong></ion-label>
+      <ion-select mode="md" formControlName="estado">
+        <ion-select-option *ngFor="let estado of estados" [value]="estado.est_codigo">{{estado.est_descripcion}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
 
-     
-        
- 
 
-      
- 
-  </ion-content>
+
+    <ion-item>
+      <ion-icon slot="start" name="reader"></ion-icon>
+      <ion-label class="obse"><strong>Observación:</strong> </ion-label>
+      <ion-textarea formControlName="observacion"></ion-textarea>
+    </ion-item>
+
+
+
+  </form>
+
+  <ion-icon type="button" (click)="sendCabecera()" name="chevron-forward"></ion-icon>
+  <ion-text>
+    <h6>Cargue los productos en la pestaña de detalle</h6>
+  </ion-text>
+
+</ion-content>

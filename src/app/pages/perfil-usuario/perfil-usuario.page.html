@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/">
+
+      </ion-back-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()"
+        ><ion-icon name="log-out-outline" ></ion-icon
+      ></ion-button>
+      
+    </ion-buttons>
+
+    <ion-title><strong>Mi Perfil</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registrousuario" (ngSubmit)="guardarUsuario()">
+    <ion-card>
+      <ion-card-content>
+    <div  class="container" >
+      <ion-avatar class="outer">
+        <ion-img [src]="this.foto"></ion-img>
+        <div class="inner" (click)="getPicture()" >
+          <ion-icon name="camera" class="camera-icon"></ion-icon>
+        </div>
+      </ion-avatar>
+      <div>
+      </div>
+    </div>
+
+  
+
+     <ion-item >
+      <ion-label class="text2" position="floating" >Nombre de usuario</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+
+    </ion-item>
+
+
+    <ion-item >
+      <ion-label class="text2" color="dark"   position="floating" >Correo Electronico</ion-label>
+      <ion-input type="email"  formControlName="email" readonly></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="text2" position="floating">Nº Celular: </ion-label>
+      <ion-input type="tel" placeholder="09XX -XXX-XXX" formControlName="telefono"></ion-input>
+    </ion-item>
+    
+    
+      <ion-button class="btnregistro" type="submit"  expand="block">Actualizar</ion-button>
+      
+   
+
+    </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

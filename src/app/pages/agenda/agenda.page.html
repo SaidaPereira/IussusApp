@@ -10,33 +10,23 @@
 <ion-content>
   <ion-datetime color="secondary"> </ion-datetime>
 
-  <ion-card>
-    <ion-grid>
-      <ion-label class="texttitle"><strong>Luisa Montiel  -    18/03/2022</strong> </ion-label>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/registroagenda/0']"
+      ><ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
+  <ion-card *ngFor="let item of agendas">
+    <ion-grid>
+      <ion-label class="texttitle"><strong>{{this.item.nombre}} - {{this.item.age_fecha}} <ion-icon (click)="eliminar(item.age_codigo)" name="trash"></ion-icon> </strong> </ion-label>
       <ion-row>
-        <ion-label class="texttitle2">Llamar para acordar entrega </ion-label>
+        <ion-label class="texttitle2">{{this.item.age_notas}}</ion-label>
       </ion-row>
+   
+
+   
+
     </ion-grid>
   </ion-card>
 
-  <ion-card>
-    <ion-grid>
-      <ion-label class="texttitle"><strong>Angela Molinas  -  18/03/2022 </strong> </ion-label>
 
-      <ion-row>
-        <ion-label class="texttitle2">Contactar para presupuestar </ion-label>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-
-  <ion-card>
-    <ion-grid>
-      <ion-label class="texttitle"><strong>Monica Cantero  -    18/03/2022</strong> </ion-label>
-
-      <ion-row>
-        <ion-label class="texttitle2">Pasar muestras </ion-label>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-</ion-content>

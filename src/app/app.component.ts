@@ -13,7 +13,6 @@ export class AppComponent {
     { title: 'Clientes', url: '/clientes', icon: 'people' },
     { title: 'Estados', url: '/estados', icon: 'pricetag' },
     { title: 'Productos', url: '/productos', icon: 'cart' },
-    { title: 'Registro', url: '/registrousuario', icon: 'person-add' }
  
   
 

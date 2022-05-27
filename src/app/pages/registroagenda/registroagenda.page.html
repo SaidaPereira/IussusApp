@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/">
+
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Registro de Agenda</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+  <form [formGroup]="registroagenda" (ngSubmit)="guardarAgenda()">
+  <ion-card>
+    <ion-card-content>
+
+
+
+      <ion-item>
+        <ion-icon slot="start" name="calendar"></ion-icon>
+        <ion-label class="general"><strong>Fecha: </strong></ion-label>
+        <ion-input formControlName="fecha" type="date"></ion-input>
+      </ion-item>
+
+      
+        <ion-item>
+          <ion-icon slot="start" name="people"></ion-icon>
+          <ion-label class="general" ><strong>Cliente: </strong></ion-label>
+          <ion-select mode="md" formControlName="cliente">
+            <ion-select-option *ngFor="let cliente of clientes" [value]="cliente.cli_codigo">{{cliente.cli_nombre}} {{cliente.cli_apellido}}</ion-select-option>
+          </ion-select>
+  
+        </ion-item>
+
+      
+      <ion-item>
+        <ion-label position="floating">Notas: </ion-label>
+        <ion-input
+          type="text"
+          formControlName="notas"
+        ></ion-input>
+      </ion-item>
+
+
+
+
+   
+
+      </ion-card-content>
+      <ion-button class="btnguardar" type="submit"  [disabled]="!registroagenda.valid" ><ion-icon name="checkmark"></ion-icon> </ion-button>
+      <ion-button class="btncancelar" [routerLink]="'/agenda'"> <ion-icon name="close" ></ion-icon> </ion-button>
+    </ion-card>
+  </form>
+</ion-content>

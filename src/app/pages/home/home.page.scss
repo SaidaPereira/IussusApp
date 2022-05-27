@@ -39,6 +39,8 @@ ion-button > ion-icon[name="person-circle"] {
 ion-fab-button{
   --background:#7cb4b4;
     color: black;
+    --background-activated: #7cb4b4;
+
 }
 
 ion-fab-button > ion-icon[name="add"] {
@@ -57,4 +59,8 @@ ion-fab-list >ion-fab-button > ion-icon[name="clipboard"] {
 ion-fab-list >ion-fab-button > ion-icon[name="cart"] {
   color: black;
   font-size: 30px;
+}
+
+.btnoption{
+  margin-left: 50%;
 }

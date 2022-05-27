@@ -30,7 +30,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'registrousuario',
+    path: 'registrousuario/:id',
     loadChildren: () => import('./pages/registrousuario/registrousuario.module').then( m => m.RegistrousuarioPageModule)
   },
   {
@@ -61,10 +61,7 @@ const routes: Routes = [
     path: 'cabecerapedido',
     loadChildren: () => import('./pages/cabecerapedido/cabecerapedido.module').then( m => m.CabecerapedidoPageModule)
   },
-  {
-    path: 'cargapedido',
-    loadChildren: () => import('./pages/cargapedido/cargapedido.module').then( m => m.CargapedidoPageModule)
-  },
+  
   {
     path: 'estados',
     loadChildren: () => import('./pages/estados/estados.module').then( m => m.EstadosPageModule)
@@ -73,13 +70,21 @@ const routes: Routes = [
     path: 'registroestado/:id',
     loadChildren: () => import('./pages/registroestado/registroestado.module').then( m => m.RegistroestadoPageModule)
   },
+  
   {
-    path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
-  },  {
     path: 'configuracion',
     loadChildren: () => import('./pages/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+  },
+  {
+    path: 'perfil-usuario',
+    loadChildren: () => import('./pages/perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
+  },
+  {
+    path: 'registroagenda/:id',
+    loadChildren: () => import('./pages/registroagenda/registroagenda.module').then( m => m.RegistroagendaPageModule)
   }
+
+
 
 
 

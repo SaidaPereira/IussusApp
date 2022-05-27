@@ -15,3 +15,18 @@ margin-top: 15px;  }
     --background: #b6e9e9;
 
  }
+
+ ion-fab-button > ion-icon[name="add"] {
+    color: black;
+    font-size: 35px;
+}
+
+ion-fab-button{
+    --background:#7cb4b4;
+      color: black;
+  }
+  
+  ion-icon[name="trash"] {
+    size: 35px;
+  
+  }

@@ -93,13 +93,6 @@ await alert.present();
 
   
   
-  editar(codigo) {
-    const valor = this.clienteService.getById(codigo).subscribe((data) => {
-      console.log(valor);
-    });
-
-    this.clienteService.create(valor);
-  }
 }
 
 

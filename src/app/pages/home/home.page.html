@@ -5,7 +5,7 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/perfil']"
+      <ion-button [routerLink]="'/perfil-usuario'"
         ><ion-icon name="person-circle"></ion-icon
       ></ion-button>
       <ion-button [routerLink]="['/configuracion']"
@@ -19,91 +19,57 @@
 
 <!--contenido-->
 
-<ion-content mode="ios">
 
-  <!--Dato 1-->
-  <ion-card>
+
+
+<ion-content mode="ios" >
+  <ion-card *ngFor="let item of pedidos">
     <ion-grid>
       <ion-row>
-        <ion-col size="9">
+        <ion-col size="5">
           <ion-label class="texttitle"
-            ><strong>Pedido Nº 1 - 21/02/2022 </strong>
+            ><strong>Pedido Nº {{item.ped_codigo}} </strong>
+          </ion-label>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label class="texttitle"
+            ><strong>{{item.ped_fecha}} </strong>
           </ion-label>
         </ion-col>
 
         <ion-col>
           
-          <ion-button size="small" class="btnopciones" ><ion-icon
-            color="success"
-            size="large"
-            name="ellipsis-horizontal-circle-outline"
-          >
-
-          </ion-icon></ion-button>
-
+            <ion-icon class="btnoption"
+            type="button"
+           (click)="opciones(item.ped_codigo,item.estado)"
+              color="success"
+              size="large"
+              name="ellipsis-horizontal-circle-outline" >
+       
+            </ion-icon>
+             
         </ion-col>
       </ion-row>
 
       <ion-row>
-        <ion-label class="texttitle2">Luis Montiel - Km 22 Monday </ion-label>
+        <ion-label class="texttitle2">{{item.nombre}} - {{item.direccion}} </ion-label>
       </ion-row>
 
       <ion-row>
         <ion-col size="8">
           <ion-label class="texttitle"
-            ><strong>Monto: 50.000gs </strong>
+            ><strong>{{item.ped_total}}gs  </strong>
           </ion-label>
         </ion-col>
         <ion-col>
-          <ion-label class="texttitle3">Presupuestado </ion-label>
+          <ion-label class="texttitle3">{{item.estado}} </ion-label>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
 
 
-    <!--Dato 2-->
-  <ion-card>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="9">
-          <ion-label class="texttitle"
-            ><strong>Pedido Nº 2 - 05/03/2022 </strong>
-          </ion-label>
-        </ion-col>
-
-        <ion-col>
-          
-          <ion-button size="small" class="btnopciones" ><ion-icon
-            color="success"
-            size="large"
-            name="ellipsis-horizontal-circle-outline"
-          >
-
-          </ion-icon></ion-button>
-
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-label class="texttitle2">Monica Rivas - Km 30 </ion-label>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="8">
-          <ion-label class="texttitle"
-            ><strong>Monto: 80.000gs </strong>
-          </ion-label>
-        </ion-col>
-        <ion-col>
-          <ion-label class="texttitle4">Terminado </ion-label>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-
-
-   <!--Registros -->
+  <!--Registros -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button><ion-icon name="add"></ion-icon> </ion-fab-button>
 
@@ -112,19 +78,23 @@
         ><ion-icon name="clipboard"> </ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button [routerLink]="['/registroestado/0']"><ion-icon name="pricetag"></ion-icon></ion-fab-button>
+      <ion-fab-button [routerLink]="['/registroestado/0']"
+        ><ion-icon name="pricetag"></ion-icon
+      ></ion-fab-button>
 
-      <ion-fab-button [routerLink]="['/registroproducto/0']"><ion-icon name="cart"></ion-icon></ion-fab-button>
-      <ion-fab-button [routerLink]="['/registrocliente/0']"><ion-icon name="people"></ion-icon></ion-fab-button>
-      
+      <ion-fab-button [routerLink]="['/registroproducto/0']"
+        ><ion-icon name="cart"></ion-icon
+      ></ion-fab-button>
+      <ion-fab-button [routerLink]="['/registrocliente/0']"
+        ><ion-icon name="people"></ion-icon
+      ></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
 </ion-content>
 
+
 <ion-footer>
   <ion-toolbar class="footer">
-    <ion-title class="ion-text-center"
-      ><strong>Total: 130.000gs</strong>
-    </ion-title>
+   
   </ion-toolbar>
 </ion-footer>

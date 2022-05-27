@@ -18,8 +18,8 @@ export class RegistroclientePage implements OnInit {
     direccion: [''],
     ruci: [''],
     telefono: ['', Validators.required],
-    correo: [],
-    notas: [' '],
+    correo: [''],
+    notas: [''],
   });
 
   constructor(
